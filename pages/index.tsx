@@ -1,14 +1,12 @@
-import Head from 'next/head';
-import utilStyles from '../styles/utils.module.css';
-import Layout, { siteTitle } from '../components/layout';
-import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date';
+import Head from 'next/head'
+import utilStyles from '../styles/utils.module.css'
+import Layout, { siteTitle } from '../components/layout'
+import { getSortedPostsData } from '../lib/posts'
+import Link from 'next/link'
+import Date from '../components/date'
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
-      {/* Keep the existing code here */}
-
       {/* Add this <section> tag below the existing <section> tag */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <p>[Your Self Introduction]</p>
@@ -30,10 +28,10 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = getSortedPostsData()
   return {
     props: {
       allPostsData,
     },
-  };
+  }
 }
